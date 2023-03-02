@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+.backg {
+  background-color: #0067ac;
+  height: auto;
+}
+nav {
+  background-color: #115473;
+}
+
+.nav-link {
+  color: white !important;
+}
+.navbar > .active > a {
+  color: white !important;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  max-width: 150px;
+  max-height: 150px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+th {
+  background-color: red !important;
+  padding: 1rem 1.85rem !important;
+}

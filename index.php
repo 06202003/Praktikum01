@@ -22,35 +22,33 @@
             <img src="img/bookstudio.png" class="logo" alt="" />
           </div>
           <div class="col-md-4">
-            <h2>BookStudio</h2>
+            <h1><b>BookStudio</b></h1>
             <h5>Universitas Kristen Maranatha</h5>
             <h5>Bandung</h5>
           </div>
           <div class="col-md-6"></div>
         </div>
       </div>
-      <nav class="navbar navbar-expand-lg ">
-        <div class="container-fluid me-0">
-          <button class="navbar-toggler mx-auto py-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
-                <span class="navbar-toggler-icon"></span> 
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="?menu=home"><h5>Home</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="?menu=genre"><h5>Genre</h5></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="?menu=book"><h5>Book</h5></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
     </section>
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="?menu=home"><h5>Home</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?menu=genre"><h5>Genre</h5></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?menu=book"><h5>Book</h5></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <main>
         <?php
         $navigation = filter_input(INPUT_GET, 'menu');

@@ -11,35 +11,35 @@ $link =null;
 ?>
 <div class="container text-center mt-4">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-12">    
-            <div class="table-responsive">        
-                <table class="table table-hover  table-striped table-bordered border-danger table-sm">
-                    <thead>
-                    <tr>
-                        <th scope="col">ISBN</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Publisher</th>
-                        <th scope="col">Publish_year</th>
-                        <th scope="col">Nama_genre</th>
-                    </tr>
-                    </thead>
-                    <tbody >
-                    <?php
-                    foreach($result as $book ){
-                        echo '<tr>';
-                        echo '<td>'. $book['ISBN'] . '</td>';
-                        echo '<td>'. $book['title'] . '</td>';
-                        echo '<td>'. $book['author'] . '</td>';
-                        echo '<td>'. $book['publisher'] . '</td>';
-                        echo '<td>'. $book['publish_year'] . '</td>';
-                        echo '<td>'. $book['nama_genre'] . '</td>';
-                        echo '</tr>';
-                    }
-                    ?>
-                    </tbody>
-                </table>
-            </div>
+        <div class="col-md-12">
+            
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Publish_year</th>
+        <th scope="col">Nama_genre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($result as $book ){
+        echo '<tr>';
+        echo '<td>'. $book['ISBN'] . '</td>';
+        echo '<td>'. $book['title'] . '</td>';
+        echo '<td>'. $book['author'] . '</td>';
+        echo '<td>'. $book['publisher'] . '</td>';
+        echo '<td>'. $book['publish_year'] . '</td>';
+        echo '<td>'. $book['nama_genre'] . '</td>';
+        echo '</tr>';
+    }
+    ?>
+    </tbody>
+
+</table>
         </div>
     </div>
 </div>

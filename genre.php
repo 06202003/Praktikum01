@@ -12,26 +12,26 @@ $link =null;
 <div class="container text-center mt-4">
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
-            <div class="table-responsive">        
-                <table class="table table-hover  table-striped table-bordered border-danger table-sm">            
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">NAME</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        foreach($result as $genre ){
-                            echo '<tr>';
-                            echo '<td>'. $genre['id'] . '</td>';
-                            echo '<td>'. $genre['name'] . '</td>';
-                            echo '</tr>';
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </div>
+            
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">NAME</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php
+    foreach($result as $genre ){
+        echo '<tr>';
+        echo '<td>'. $genre['id'] . '</td>';
+        echo '<td>'. $genre['name'] . '</td>';
+        echo '</tr>';
+    }
+    ?>
+    </tbody>
+
+</table>
         </div>
     </div>
 </div>

@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css">
   </head>
   <body>
     <section class="backg text-white">
@@ -22,33 +23,35 @@
             <img src="img/bookstudio.png" class="logo" alt="" />
           </div>
           <div class="col-md-4">
-            <h1><b>BookStudio</b></h1>
+            <h2>BookStudio</h2>
             <h5>Universitas Kristen Maranatha</h5>
             <h5>Bandung</h5>
           </div>
           <div class="col-md-6"></div>
         </div>
       </div>
-    </section>
-
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="?menu=home"><h5>Home</h5></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="?menu=genre"><h5>Genre</h5></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="?menu=book"><h5>Book</h5></a>
-            </li>
-          </ul>
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid me-0">
+          <button class="navbar-toggler mx-auto py-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
+                <span class="navbar-toggler-icon"></span> 
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="?menu=home"><h5>Home</h5></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="?menu=genre"><h5>Genre</h5></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="?menu=book"><h5>Book</h5></a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
+      </nav>
 
+    </section>
     <main>
         <?php
         $navigation = filter_input(INPUT_GET, 'menu');
@@ -70,5 +73,16 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#book').DataTable();
+            $('#genre').DataTable();
+            
+        });
+    </script>
   </body>
 </html>

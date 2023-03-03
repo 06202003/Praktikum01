@@ -1,1 +1,0 @@
-<h1 class="text-center my-3">Selamat Datang di BookStudio</h1>

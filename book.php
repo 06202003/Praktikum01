@@ -20,11 +20,11 @@ $link =null;
                         <th scope="col">Title</th>
                         <th scope="col">Author</th>
                         <th scope="col">Publisher</th>
-                        <th scope="col">Publish_year</th>
-                        <th scope="col">Nama_genre</th>
+                        <th scope="col">Publish Year</th>
+                        <th scope="col">Nama Genre</th>
                     </tr>
                     </thead>
-                    <tbody >
+                    <tbody>
                     <?php
                     foreach($result as $book ){
                         echo '<tr>';

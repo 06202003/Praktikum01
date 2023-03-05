@@ -9,19 +9,19 @@ $stmt->execute();
 $result = $stmt->fetchAll();
 $link =null;
 ?>
-<div class="container text-center mt-4">
+<div class="container text-center mt-3 h-100 mb-5">
     <div class="row d-flex justify-content-center">
         <div class="col-md-12">    
             <div class="table-responsive">        
                 <table class="table table-hover  table-striped table-bordered border-danger table-sm" id="book">
                     <thead>
                     <tr>
-                        <th scope="col">ISBN</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Publisher</th>
-                        <th scope="col">Publish Year</th>
-                        <th scope="col">Nama Genre</th>
+                        <th class=" text-center" scope="col">ISBN</th>
+                        <th class=" text-center" scope="col">Title</th>
+                        <th class=" text-center" scope="col">Author</th>
+                        <th class=" text-center" scope="col">Publisher</th>
+                        <th class=" text-center" scope="col">Publish Year</th>
+                        <th class=" text-center" scope="col">Nama Genre</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -29,7 +29,7 @@ $link =null;
                     foreach($result as $book ){
                         echo '<tr>';
                         echo '<td>'. $book['ISBN'] . '</td>';
-                        echo '<td>'. $book['title'] . '</td>';
+                        echo '<td class="w-25">'. $book['title'] . '</td>';
                         echo '<td>'. $book['author'] . '</td>';
                         echo '<td>'. $book['publisher'] . '</td>';
                         echo '<td>'. $book['publish_year'] . '</td>';

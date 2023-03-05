@@ -16,13 +16,13 @@ nav {
 }
 .nav-link:hover {
   font-size: 1.05em;
-  color: #1AAE9F !important;
+  color: #1aae9f !important;
 }
 
 .nav-link::after {
   display: block;
   content: '';
-  border-bottom: 2px solid #1AAE9F;
+  border-bottom: 2px solid #1aae9f;
   transform: scaleX(0);
   transition: transform 500ms cubic-bezier(1, 0.19, 0, 0.86);
   transform-origin: left;

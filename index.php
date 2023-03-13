@@ -1,5 +1,7 @@
 <?php
-  include_once 'util_function.php';
+  include_once 'db_util/util_function.php';
+  include_once 'db_util/genre_function.php';
+  include_once 'db_util/book_function.php';
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +17,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap5.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <section class="backg text-white">
@@ -58,16 +67,22 @@
         $navigation = filter_input(INPUT_GET, 'menu');
         switch ($navigation) {
             case 'home':
-                include_once 'home.php';
+                include_once 'pages/home.php';
                 break;
             case 'genre':
-                include_once 'genre.php';
+                include_once 'pages/genre.php';
                 break;
             case 'book':
-                include_once 'book.php';
+                include_once 'pages/book.php';
                 break;
+            case 'genre_update':
+                include_once 'pages/genre_edit.php';
+                break;
+            case 'book_update':
+              include_once 'pages/book_edit.php';
+              break;
             default:
-                include_once 'home.php';
+                include_once 'pages/home.php';
                 break;
         }
         ?>
@@ -83,9 +98,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
     <script src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.3/js/dataTables.bootstrap5.min.js"></script>
-
     <script>
         $(document).ready(function () {
             $('#book').DataTable();

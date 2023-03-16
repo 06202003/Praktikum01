@@ -69,16 +69,8 @@ if(isset($submitPressed)){
                         echo '<td>'. $book['publish_year'] . '</td>';
                         echo '<td>'. $book['nama_genre'] . '</td>';
                         echo '<td>
-                        <button type="button" class="btn btn-warning" onclick="editBook('.$book['ISBN'].')"><i class="fa-solid fa-pen-to-square"></i></button>
-                        <button type="button" class="btn btn-danger"  onclick="deleteBook('.$book['ISBN'].')" ><i class="fa-solid fa-trash"></i></button>
-                        <script>
-                        function deleteBook(idb) {
-                            const confirmasi = window.confirm("Are you sure want to delete this data?");
-                            if (confirmasi) {
-                              window.location = "index.php?menu=book&comd=dele&idb=" + idb;
-                            }
-                          }
-                        </script> 
+                        <button type="button" class="btn btn-warning" onclick="editBook(\''.$book['ISBN'].'\')"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button type="button" class="btn btn-danger"  onclick="deleteBook(\''.$book['ISBN'].'\')" ><i class="fa-solid fa-trash"></i></button>
                         </td>';
                         echo '</tr>';
                     }

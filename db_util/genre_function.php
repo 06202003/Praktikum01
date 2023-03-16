@@ -37,6 +37,7 @@
     function updateGenreToDb($id,$newName){
         $result = 0;
         $link = createMySQLConnection();
+        $link -> beginTransaction();
         $query = 'UPDATE genre SET name = ? WHERE id = ?';
         $stmt = $link->prepare($query);
         $stmt->bindParam(1,$newName);
@@ -53,6 +54,7 @@
     function deleteGenreFromDb($id): int{
         $result = 0;
         $link = createMySQLConnection();
+        $link -> beginTransaction();
         $query = 'DELETE FROM genre WHERE id = ?';
         $stmt = $link->prepare($query);
         $stmt->bindParam(1,$id);

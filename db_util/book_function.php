@@ -70,6 +70,7 @@
     function updateBookToDb($ISBN,$newTitle,$newAuthor,$newPublisher,$newPublishYear,$newShortDescription,$newGenreId){
         $result = 0;
         $link = createMySQLConnection();
+        $link -> beginTransaction();
         $query = 'UPDATE book SET title = ?,author = ?,publisher = ?,publish_year = ?,short_description = ?,genre_id = ? WHERE ISBN = ?';
         $stmt = $link->prepare($query);
         $stmt->bindParam(1,$newTitle,PDO::PARAM_STR);
@@ -92,6 +93,7 @@
     function deleteBookFromDb($isbn){
         $result = 0;
         $link = createMySQLConnection();
+        $link->beginTransaction();
         $query = 'DELETE FROM book WHERE ISBN = ?';
         $stmt = $link->prepare($query);
         $stmt->bindParam(1,$isbn);

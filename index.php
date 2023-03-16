@@ -1,7 +1,12 @@
 <?php
+  session_start();
+  if(!isset($_SESSION['registered_user'])){
+    $_SESSION['registered_user'] = false;
+  }
   include_once 'db_util/util_function.php';
   include_once 'db_util/genre_function.php';
   include_once 'db_util/book_function.php';
+  include_once 'db_util/user_function.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Kelompok">
     <title>BookStudio</title>
-    <link rel="stylesheet" href="css/style.css" />
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,9 +29,15 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <section class="backg text-white">
+      <?php 
+        if ($_SESSION['registered_user']){
+
+        
+      ?>
       <div class="container">
         <div class="row d-flex justify-content-center align-items-center">
           <div class="col-md-2">
@@ -46,7 +57,7 @@
                 <span class="navbar-toggler-icon"></span> 
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto my-auto">
               <li class="nav-item">
                 <a class="nav-link" href="?menu=home"><h5>Home</h5></a>
               </li>
@@ -55,6 +66,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="?menu=book"><h5>Book</h5></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link btn btn-danger btn-sm" href="?menu=logout"><h5>Logout</h5></a>
               </li>
             </ul>
           </div>
@@ -81,12 +95,23 @@
             case 'book_update':
               include_once 'pages/book_edit.php';
               break;
+            case 'logout':
+                session_unset();
+                session_destroy();
+                header('location:index.php');
+                break;
             default:
                 include_once 'pages/home.php';
                 break;
         }
         ?>
     </main>
+    <?php 
+    }else{
+      include_once('pages/login.php');
+
+    }
+    ?>
     <footer class="bg-light text-center text-lg-start " >
       <!-- Copyright -->
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">

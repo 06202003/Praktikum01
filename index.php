@@ -93,8 +93,11 @@
                 include_once 'pages/genre_edit.php';
                 break;
             case 'book_update':
-              include_once 'pages/book_edit.php';
-              break;
+                include_once 'pages/book_edit.php';
+                break;
+            case 'cover_update':
+                include_once 'pages/cover_edit.php';
+                break;
             case 'logout':
                 session_unset();
                 session_destroy();

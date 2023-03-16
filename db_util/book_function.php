@@ -1,7 +1,7 @@
 <?php 
     function fetchJoinFromDb(){
         $link = createMySQLConnection();
-        $query = "SELECT ISBN,title,author,publisher,publish_year,genre.name AS 'nama_genre' FROM book INNER JOIN genre WHERE book.genre_id = genre.id;";
+        $query = "SELECT ISBN,cover,title,author,publisher,publish_year,genre.name AS 'nama_genre' FROM book INNER JOIN genre WHERE book.genre_id = genre.id;";
         $stmt = $link->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll();
@@ -28,7 +28,7 @@
     }
     function fetchOneBook($isbn){
         $link = createMySQLConnection();
-        $query = "SELECT ISBN,title,author,publisher,publish_year,short_description,genre_id  FROM book WHERE ISBN = ?;";
+        $query = "SELECT ISBN,cover,title,author,publisher,publish_year,short_description,genre_id  FROM book WHERE ISBN = ?;";
         $stmt = $link->prepare($query);
         $stmt->bindParam(1,$isbn);
         $stmt->execute();
@@ -90,6 +90,25 @@
         return $result;
     }
     
+    function updateCoverToDb($isbn, $cover){
+        $result = 0;
+        $link = createMySQLConnection();
+        $link -> beginTransaction();
+        $query = 'UPDATE book SET cover= ? WHERE ISBN = ?';
+        $stmt = $link->prepare($query);
+        $stmt->bindParam(1,$isbn,PDO::PARAM_STR);
+        $stmt->bindParam(2,$cover,PDO::PARAM_STR);
+        if($stmt->execute()){
+            $link -> commit();
+            $result = 1;
+        }else{
+            $link -> rollBack();
+        }
+        $link =null;
+        return $result;
+    }
+    
+
     function deleteBookFromDb($isbn){
         $result = 0;
         $link = createMySQLConnection();

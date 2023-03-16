@@ -49,6 +49,7 @@ if(isset($submitPressed)){
                     <thead>
                     <tr>
                         <th class=" text-center" scope="col">ISBN</th>
+                        <th class=" text-center" scope="col">Cover</th>
                         <th class=" text-center" scope="col">Title</th>
                         <th class=" text-center" scope="col">Author</th>
                         <th class=" text-center" scope="col">Publisher</th>
@@ -63,12 +64,14 @@ if(isset($submitPressed)){
                     foreach($result as $book ){
                         echo '<tr>';
                         echo '<td>'. $book['ISBN'] . '</td>';
+                        echo '<td> <img src="uploads/'. $book['cover'] . '.jpg" style="width:100%;height:auto;max-width:300px;max-height:300px;"></td>';
                         echo '<td class="w-25">'. $book['title'] . '</td>';
                         echo '<td>'. $book['author'] . '</td>';
                         echo '<td>'. $book['publisher'] . '</td>';
                         echo '<td>'. $book['publish_year'] . '</td>';
                         echo '<td>'. $book['nama_genre'] . '</td>';
                         echo '<td>
+                        <button type="button" class="btn btn-success" onclick="editCover(\''.$book['ISBN'].'\')"><i class="fa-solid fa-image"></i></button>
                         <button type="button" class="btn btn-warning" onclick="editBook(\''.$book['ISBN'].'\')"><i class="fa-solid fa-pen-to-square"></i></button>
                         <button type="button" class="btn btn-danger"  onclick="deleteBook(\''.$book['ISBN'].'\')" ><i class="fa-solid fa-trash"></i></button>
                         </td>';

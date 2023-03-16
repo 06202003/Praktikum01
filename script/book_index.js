@@ -1,3 +1,6 @@
+function editCover(isbna) {
+  window.location = 'index.php?menu=cover_update&isbna=' + isbna;
+}
 function editBook(isbn) {
   window.location = 'index.php?menu=book_update&isbn=' + isbn;
 }
